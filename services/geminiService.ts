@@ -1,6 +1,6 @@
-// URL вашего backend-сервиса на Render. Замените на реальный URL после деплоя.
-// Для локальной разработки можно использовать 'http://localhost:3001'
-const API_URL = 'https://agro-helper-backend.onrender.com'; // Пример
+// ❗️❗️❗️ ВАЖНО: Замените этот URL на реальный URL вашего БЭКЕНД-сервиса на Render.
+// Он должен выглядеть примерно так: https://agro-helper-backend.onrender.com
+const API_URL = 'https://agro-helper-backend.onrender.com'; // <-- ЗАМЕНИТЕ ЭТОТ URL!
 
 async function postRequest(endpoint: string, body: object): Promise<any> {
     try {
