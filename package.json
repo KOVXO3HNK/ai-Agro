@@ -1,22 +1,23 @@
+
 {
-  "name": "агропомощник-ии",
-  "private": true,
-  "version": "0.0.0",
+  "name": "agro-helper-backend",
+  "version": "1.0.0",
+  "description": "Backend proxy for Agro Helper AI",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "react-dom": "^19.2.0",
-    "react": "^19.2.0",
-    "@google/genai": "^1.29.0"
+    "@google/genai": "^1.29.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "nodemon": "^3.1.0"
   }
 }
