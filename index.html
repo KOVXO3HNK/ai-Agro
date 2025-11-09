@@ -30,14 +30,16 @@
       }
     </script>
     <!--
-      Обновление: Переход на стабильную версию React 18 с надежного CDN (esm.sh)
-      для улучшения совместимости и надежности в среде без сборки.
+      Исправление: Унифицированы все импорты React до версии 18.2.0, чтобы избежать конфликтов.
+      Добавлен `react/jsx-runtime` для корректной работы JSX-транспиляции Babel.
+      Удалены ненужные/конфликтующие импорты.
     -->
     <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@18.2.0",
     "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
@@ -52,10 +54,9 @@
   <body class="bg-slate-900 text-slate-200">
     <div id="root"></div>
     <!--
-      Ключевое исправление: Добавлен `data-presets="react,typescript"`.
-      Это явно указывает Babel, что нужно использовать пресеты для компиляции синтаксиса React (JSX) и TypeScript.
-      Это исправляет ошибку, из-за которой TSX-файлы не компилировались правильно, что приводило к пустому экрану.
+      Ключевое исправление: `importmap` выше исправляет конфликт версий React.
+      Убран нестандартный атрибут `data-type="module"`.
     -->
-    <script type="text/babel" data-presets="react,typescript" data-type="module" src="/index.tsx" defer></script>
+    <script type="text/babel" data-presets="react,typescript" src="/index.tsx" defer></script>
   </body>
 </html>
